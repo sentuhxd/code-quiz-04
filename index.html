@@ -14,14 +14,44 @@
     </head>
   
     <body>
-
-        <div class="container">
-            <div id="home" class="flex-column flex-center">
-                <h1> Start game?</h1>
-                <a href="/game.html" class="btn">Play Now</a>
-                <a href="leaderboards.html" id="leaderboard-btn" class="btn">Leaderboards</a>
+        <header> 
+            <div>
+                <a href="leaderboards.html"><button class="scores-leader" id="view-leaderboards"> VIEW LEADERS</button></a>
             </div>
-        </div>
+
+            <div class="timer">
+                <p>Time: <span id="timer">0</span></p>
+            </div>
+       
+       
+        </header> 
+
+
+        <section class="container">
+            <div id="container-start">
+                <div class="container-info" id="container-screen">
+                    <h1> Quiz </h1>
+                    <p> See if you can answer these coding questions >:D</p>
+                    <button id="play-start"> Play Now </button>
+
+                </div>
+            </div>
+
+
+            <div class="hide" id="question">
+                <h2 id="question-sentences"></h2>
+                <div class="info" id="info"></div>
+            </div>
+
+            <div class="hide" id="container-end">
+                <h2>You mustve lost huh</h2>
+                <p> Score : <span id="final-score"></span></p>
+                <p> Enter Initals: <input type="text" id="initials" max="2">
+                    <button id="play-end"> Submit</button>
+                </p>
+            </div> 
+            
+        </section>
 
             
             
