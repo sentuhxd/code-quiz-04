@@ -12,23 +12,62 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.container, .scores {
+    margin: 100px auto 0 auto;
+    max-width: 400px;
+}
+
 h1 {
-    font-size: 30px;
-    color: white;
-    margin-bottom: 30px;
+    font-size: 60px;
 }
 
 h2 {
-    font-size: 20px;
-    margin-bottom: 4rem;
+    font-size: 40px;
 }
 
-.container {
-    height: 100vh;
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 3rem
+p {
+    margin: 15px 15px;
+}
+
+
+.container-info {
+    text-align: center;
+}
+
+.scores-leader {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.timer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+
+
+input[type="text"] {
+    font-size: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+
+ol {
+    padding-left: 15px;
+    max-height: 600px;
+    overflow: auto;
+}
+  
+  li {
+    padding: 5px;
+    list-style: decimal inside none;
+}
+  
+  li:nth-child(odd) {
+    background-color: #fff;
 }

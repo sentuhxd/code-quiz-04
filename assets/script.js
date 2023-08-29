@@ -7,6 +7,7 @@ var endplayBtn = document.querySelector("#end-play");
 var initalEl = document.querySelector("#initial");
 var questionsEl = document.querySelector("#question-sentences");
 var infoEl= document.querySelector("#info")
+var responseEl = document.querySelector("#response")
 
 
 
@@ -44,15 +45,59 @@ var qIndex = 0;
 //Functions
 
 function gameStart() {
-    timeID = setInterval(clockTick, 1000);
+    timeID = setInterval(timeDown, 1000);
     timerEl.textContent = timeLeft;
-    var containerScreenEl = document.getElementById("#container-screen");
+    var containerScreenEl = document.getElementById("container-screen");
     containerScreenEl.setAttribute("class", "hide");
     questionsEl.removeAttribute("class");
     
     newQuestion();
 }
 
-function newQuestion() {
-    
+
+
+function timeDown() {
+    time--;
+    timerEl.textContent = time;
+    if (time <= 0) {
+        quizEnd();
+    }
 }
+
+function newQuestion() {
+    var nowQuestion = questions[qIndex]
+    var questionSenEl = document.getElementById("question-sentences")
+    questionSenEl.textContent = nowQuestion.prompt;
+    infoEl.innerHTML = "";
+    
+    nowQuestion.options.forEach(function(info, i) {
+        var selectBtn = document.createElement("button");
+        selectBtn.setAttribute("value", info);
+        selectBtn.textContent= i + 1 + ". " + info;
+        selectBtn.onclick = questionChoice; 
+        infoEl.appendChild(selectBtn);
+
+    });
+}
+
+function questionChoice() {
+    if (this.value !== questions[qIndex].correct) {
+        time -=15;
+        if (time < 0 ) {
+            time = 0;
+        }
+        timerEl.textContent = time;
+        responseEl.textContent = "WRONG D:";
+    }   else {
+        responseEl.textContent = "Ez peezy :D";
+    }
+    responseEl.setAttribute("class", "response");
+    
+    if (qIndex === questions.length) {
+        quizEnd();
+    } else {
+        newQuestion();
+    }
+}
+
+function quizEnd()
