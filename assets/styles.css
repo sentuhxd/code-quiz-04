@@ -21,9 +21,7 @@ h1 {
     font-size: 60px;
 }
 
-h2 {
-    font-size: 40px;
-}
+
 
 p {
     margin: 15px 15px;
@@ -46,28 +44,10 @@ p {
     right: 15px;
 }
 
-
-
 input[type="text"] {
     font-size: 100%;
 }
 
 .hide {
     display: none;
-}
-
-
-ol {
-    padding-left: 15px;
-    max-height: 600px;
-    overflow: auto;
-}
-  
-  li {
-    padding: 5px;
-    list-style: decimal inside none;
-}
-  
-  li:nth-child(odd) {
-    background-color: #fff;
 }
